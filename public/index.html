@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Medha's Keep</title>
+  <link rel="icon" type="icon/png" href="../public/img/icon.png">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#keep-display").sortable();
+      $("#keep-display").disableSelection();
+    })
+    $(function () {
+      $(".note").sortable();
+      $(".note").disableSelection();
+    })
+    $(".open").on("click", function(){
+$(".popup, .popup-content").addClass("active");
+})
+$(".close, .popup").on("click", function(){
+$(".popup, .popup-content").removeClass("active");
+})
+  </script>
+  <title>Document</title>
+</head>
+
+<body>
+  
+
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-md ">
+      <a class="navbar-brand" href="#"><h1 style="color:black">Note It Down !
+        </h1></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button type="button" id="AddBtn" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+                &#43; Add a Note
+              </button>
+        </form>
+      </div>
+
+
+
+    
+  </nav>
+  <div id="keep-display" class="row">
+
+  </div>
+ 
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Create a New Note</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form id="note-form">
+            <div class="list-title">
+              <input type="text" value="" placeholder="Give a Title">
+            </div>
+            <h5>List Items</h5>
+            <ul class="list">
+
+            </ul>
+
+            <button type="submit" class="btn btn-secondary">Submit</button>
+            <button type="button" id="add-list-btn" class="btn btn-secondary">Add List Item</button>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="save-note">Create</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Another Modal -->
+
+  <!--Creates the popup body-->
+<div class="popup-overlay">
+    <!--Creates the popup content-->
+     <div class="popup-content">
+        
+        <button class="close">Close</button>    
+    </div>
+    </div>
+    
+
+</body>
+
+</html>
